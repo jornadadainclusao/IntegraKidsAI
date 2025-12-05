@@ -22,12 +22,6 @@ def index():
         erros = float(request.form["erros"])
         input = [dificuldade, idade, tentativas, erros]
 
-        print(request)
-
-        print(MODEL_DATA_DIR)
-        print(DATA_PATH)
-        print(MODEL_PATH)
-        print(OUTPUT_MODEL)
         _model = load(MODEL_PATH)
         prediction = predict(_model, input)
         data = render_template("index.html", resultado=prediction)
